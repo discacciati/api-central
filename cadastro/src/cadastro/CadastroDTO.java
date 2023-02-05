@@ -13,7 +13,7 @@ public class CadastroDTO {
     private String sexo;
 
 
-    //não sei da onde vem o erro???
+    
     public static CadastroDTO of(Cadastro cadastro) {
         CadastroDTO dto = new CadastroDTO(cadastro.getNome(), cadastro.getCpf(), cadastro.getNascimento(), cadastro.getEstadoCivil(), cadastro.getSexo() );
          dto.nome = cadastro.getNome();

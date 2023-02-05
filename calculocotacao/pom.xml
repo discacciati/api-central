@@ -4,20 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>api-central</artifactId>
-        <groupId>com.ordem.compra</groupId>
+        <groupId>com.ordem-compra</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>calculocotacao</artifactId>
-    <name>calculocotacao</name>
-    <description>Api para calculo da cotação da moeda</description>
+
     <properties>
-        <java.version>17</java.version>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,5 +49,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 
 </project>

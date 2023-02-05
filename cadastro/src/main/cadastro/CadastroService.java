@@ -1,10 +1,8 @@
 package main.cadastro;
 
 import lombok.RequiredArgsConstructor;
-import neves.cristiano.comum.exceptions.EntidadeDuplicadaException;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -16,9 +14,9 @@ public class CadastroService {
         return repository.findById(id);
     }
 
-    public void adicionar(Cadastro entity) throws EntidadeDuplicadaException {
+    public void adicionar(Cadastro entity) throws Exception {
         if (repository.existsById(entity.getCpf())) {
-            throw new EntidadeDuplicadaException();
+            throw new Exception();
         }
         repository.save(entity);
     }

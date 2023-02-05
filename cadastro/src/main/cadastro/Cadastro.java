@@ -1,4 +1,4 @@
-package cadastro;
+package main.cadastro;
 
 import java.time.LocalDate;
 

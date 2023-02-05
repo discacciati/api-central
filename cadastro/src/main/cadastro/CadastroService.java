@@ -1,4 +1,4 @@
-package cadastro;
+package main.cadastro;
 
 import lombok.RequiredArgsConstructor;
 import neves.cristiano.comum.exceptions.EntidadeDuplicadaException;

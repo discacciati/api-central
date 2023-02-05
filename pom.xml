@@ -4,8 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>calculo-cotacao</module>
-	</modules>
+		<module>calculocotacao</module>
+		<module>common</module>
+        <module>calculocotacao</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

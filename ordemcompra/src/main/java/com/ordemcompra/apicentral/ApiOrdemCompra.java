@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class ApiCalculoCotacao {
+public class ApiOrdemCompra {
     public static void main(String[] args) {
 
-        SpringApplication.run(ApiCalculoCotacao.class, args);
+        SpringApplication.run(ApiOrdemCompra.class, args);
 
     }
 }

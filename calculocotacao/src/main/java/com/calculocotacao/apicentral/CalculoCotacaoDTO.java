@@ -1,4 +1,4 @@
-package com.ordemcompra.apicentral;
+package com.calculocotacao.apicentral;
 
 import lombok.Data;
 

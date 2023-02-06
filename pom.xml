@@ -6,7 +6,7 @@
 	<modules>
 		<module>calculocotacao</module>
 		<module>common</module>
-        <module>calculocotacao</module>
+        <module>ordemcompra</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

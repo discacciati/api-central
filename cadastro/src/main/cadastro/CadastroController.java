@@ -41,7 +41,7 @@ public class CadastroController {
         }
         try {
             service.adicionar(cadastro.toEntity());
-        } catch (EntidadeDuplicadaException e) {
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe uma pessoa com o CPF informado");
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocorreu um erro desconhecido");

@@ -1,4 +1,4 @@
-package com.ordemcompra.apicentral;
+package com.calculocotacao.apicentral;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,7 +28,7 @@ public class CalculoCotacaoController {
             .build();*/
 
 
-    private final CalculoCotacaoService service;
+    //private final CalculoCotacaoService service;
 
 /*    @GetMapping("{code}")
     public ResponseEntity<CalculoCotacaoDTO> getByCode(@PathVariable String code){

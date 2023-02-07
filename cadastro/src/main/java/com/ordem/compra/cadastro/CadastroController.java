@@ -43,8 +43,6 @@ public class CadastroController {
             service.adicionar(cadastro.toEntity());
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Já existe uma pessoa com o CPF informado");
-        } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocorreu um erro desconhecido");
         }
         return ResponseEntity.created(URI.create("/api/cadastro/" + clearCpf)).build();
     }

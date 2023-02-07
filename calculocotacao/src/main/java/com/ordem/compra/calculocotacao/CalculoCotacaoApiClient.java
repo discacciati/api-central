@@ -2,27 +2,26 @@ package com.ordem.compra.calculocotacao;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.EurekaClient;
-import lombok.RequiredArgsConstructor;
-import org.springframework.remoting.RemoteAccessException;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Flux;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
 public class CalculoCotacaoApiClient<InstanceInfo> {
-    private final static String ENDPOINT = "https://economia.awesomeapi.com.br/{moeda}/";
+    private String ENDPOINT = "https://economia.awesomeapi.com.br/";
 
-    private final EurekaClient eurekaClient;
+    private WebClient client = WebClient.create();
 
-    private final RestTemplate restTemplate;
+    public List<CalculoCotacaoDTO> getCotacaoMoeda(String moeda) {
+        ENDPOINT = ENDPOINT + moeda;
+        //Fazer o GET no endpoint com a sigla da moeda e transformar o Body recebido em Classe
+        Flux<CalculoCotacaoDTO> valorCotacao = client.get().uri(ENDPOINT).retrieve().bodyToFlux(CalculoCotacaoDTO.class);
 
-    public Double cotacaoMoeda(String moeda) {
-        InstanceInfo apiInstanceInfo = eurekaClient.getApplication("moeda")
-                .getInstances().stream().findAny().orElseThrow(() -> new RemoteAccessException("Mesa Api indisponível"));
-        return restTemplate.getForEntity(ENDPOINT, String.class, apiInstanceInfo.getHostName(), apiInstanceInfo.getPort(), id)
-                .getStatusCode()
-                .is2xxSuccessful();
+        //Primeiro pega a Lista do Body gerado. Usar o block para o Flux esperar o Corpo ser copiado,
+        //E retorna a Lista que tem como objeto, na posição[0] que a api envia.
+        return valorCotacao.collect(Collectors.toList()).share().block();
     }
 }

@@ -17,7 +17,7 @@ public class CalculoCotacaoDTO {
     private Double bid;
     private Double ask;
     private Double timestamp;
-    private LocalDateTime create_date;
+    private String create_date;
 
     public static CalculoCotacaoDTO of(CalculoCotacao calculoCotacao){
         CalculoCotacaoDTO dto = new CalculoCotacaoDTO();

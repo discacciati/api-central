@@ -1,4 +1,4 @@
-package com.ordem.compra.common;
+package com.ordem.compra.ordemcompra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

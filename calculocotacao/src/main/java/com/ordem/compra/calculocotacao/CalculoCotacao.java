@@ -21,7 +21,7 @@ public class CalculoCotacao {
     private Double bid;
     private Double ask;
     private Double timestamp;
-    private LocalDateTime create_date;
+    private String create_date;
 
 
 }

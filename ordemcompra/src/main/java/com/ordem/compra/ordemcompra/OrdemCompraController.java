@@ -25,35 +25,35 @@ public class OrdemCompraController {
         return ResponseEntity.ok(OrdemCompraDTO.of(entity));
     }
 
-    @PostMapping("api/adicionarordemcompra")
-    public  ResponseEntity<Void> CriarOrdemCompra(@RequestBody OrdemCompraDTO ordemcompra){
-        if (ordemcompra == null){
+    @PostMapping
+    public  ResponseEntity<Void> CriarOrdemCompra(@RequestBody OrdemCompraDTO ordemCompraReq){
+        if (ordemCompraReq == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma ordem de compra valida");
         }
-        if (ordemcompra.getCpfCliente() == null || ordemcompra.getCpfCliente().isBlank()){
+        if (ordemCompraReq.getCpfCliente() == null || ordemCompraReq.getCpfCliente().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado um cpf");
         }
-        if (ordemcompra.getValorMoedaEstrangeira() == null ){
+        if (ordemCompraReq.getValorMoedaEstrangeira() == null ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o valor da ordem de compra");
         }
-        if (ordemcompra.getTipoMoeda() == null || ordemcompra.getTipoMoeda().isBlank()){
+        if (ordemCompraReq.getTipoMoeda() == null || ordemCompraReq.getTipoMoeda().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o tipo da moeda");
         }
-        if (service.isTipoMoedaValido(ordemcompra.getTipoMoeda())){
+        if (service.isTipoMoedaValido(ordemCompraReq.getTipoMoeda())){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o tipo da moeda valido");
         }
-        if (ordemcompra.getNumeroAgenciaRetirada() == null || ordemcompra.getNumeroAgenciaRetirada().isBlank()){
+        if (ordemCompraReq.getNumeroAgenciaRetirada() == null || ordemCompraReq.getNumeroAgenciaRetirada().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o número da agencia");
         }
 
         try{
-            service.criar(ordemcompra.toEntity());
+            OrdemCompra ordemCompraRes = service.criar(ordemCompraReq.toEntity());
+            return new ResponseEntity(ordemCompraRes,HttpStatus.CREATED);
         }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Erro inesperado "+e.toString());
         }
 
-        //TODO logica do metodo
-        return ResponseEntity.created(URI.create("/api/ordemcompra/")).build();
+
 
     }
 

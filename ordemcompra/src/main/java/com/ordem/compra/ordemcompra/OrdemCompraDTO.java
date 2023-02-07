@@ -27,6 +27,7 @@ public class OrdemCompraDTO {
         dto.setTipoMoeda(ordemCompra.getTipoMoeda());
         dto.setValorCotacao(ordemCompra.getValorCotacao());
         dto.setValorTotalOperacao(ordemCompra.getValorTotalOperacao());
+        dto.setValorMoedaEstrangeira(ordemCompra.getValorMoedaEstrangeira());
         dto.setNumeroAgenciaRetirada(ordemCompra.getNumeroAgenciaRetirada());
 
         return dto;
@@ -41,6 +42,7 @@ public class OrdemCompraDTO {
         entity.setTipoMoeda(tipoMoeda);
         entity.setValorCotacao(valorCotacao);
         entity.setValorTotalOperacao(valorTotalOperacao);
+        entity.setValorMoedaEstrangeira(valorMoedaEstrangeira);
         entity.setNumeroAgenciaRetirada(numeroAgenciaRetirada);
         return entity;
     }

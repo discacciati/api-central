@@ -15,7 +15,7 @@ public class CadastroDTO {
 
 
     public static CadastroDTO of(Cadastro cadastro) {
-        CadastroDTO dto = new CadastroDTO(cadastro.getNome(), cadastro.getCpf(), cadastro.getNascimento(), cadastro.getEstadoCivil(), cadastro.getSexo() );
+        CadastroDTO dto = new CadastroDTO();
          dto.nome = cadastro.getNome();
          dto.cpf = cadastro.getCpf();
          dto.nascimento = cadastro.getNascimento();

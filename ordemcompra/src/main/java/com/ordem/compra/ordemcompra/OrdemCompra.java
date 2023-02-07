@@ -1,4 +1,4 @@
-package com.ordem.compra.common;
+package com.ordem.compra.ordemcompra;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

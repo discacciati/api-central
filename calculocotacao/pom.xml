@@ -3,31 +3,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>api-central</artifactId>
-        <groupId>com.ordem-compra</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.ordem-compra</groupId>
+    <groupId>com.ordem.compra</groupId>
     <artifactId>calculocotacao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.ordem-compra</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
@@ -62,47 +54,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eurekaclinical</groupId>
-            <artifactId>eurekaclinical-user-common</artifactId>
-            <version>1.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eurekaclinical</groupId>
-            <artifactId>eurekaclinical-user-client</artifactId>
-            <version>1.7</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eurekaclinical</groupId>
-            <artifactId>eurekaclinical-user-agreement-client</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eurekaclinical</groupId>
-            <artifactId>eurekaclinical-i2b2-integration-webapp</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eurekaclinical</groupId>
-            <artifactId>eurekaclinical-parent-standard-deps</artifactId>
-            <version>3</version>
-        </dependency>
-        <dependency>
-            <groupId>me.aflak.libraries</groupId>
-            <artifactId>webclient</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>net.officefloor.spring</groupId>
-            <artifactId>officespring_webclient</artifactId>
-            <version>3.40.0</version>
-        </dependency>
-        <dependency>
-            <groupId>us.careydevelopment.util</groupId>
-            <artifactId>webclient-common</artifactId>
-            <version>1.0.0-RELEASE</version>
-        </dependency>
-
     </dependencies>
 
 

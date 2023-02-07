@@ -30,19 +30,19 @@ public class OrdemCompraController {
         if (ordemcompra == null){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informada uma ordem de compra valida");
         }
-        if (ordemcompra.getCpf() == null || ordemcompra.getCpf().isBlank()){
+        if (ordemcompra.getCpfCliente() == null || ordemcompra.getCpfCliente().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado um cpf");
         }
-        if (ordemcompra.getValor_ordem_compra() == null ){
+        if (ordemcompra.getValorMoedaEstrangeira() == null ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o valor da ordem de compra");
         }
-        if (ordemcompra.getTipo_moeda() == null || ordemcompra.getTipo_moeda().isBlank()){
+        if (ordemcompra.getTipoMoeda() == null || ordemcompra.getTipoMoeda().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o tipo da moeda");
         }
-        if (service.isTipoMoedaValido(ordemcompra.getTipo_moeda())){
+        if (service.isTipoMoedaValido(ordemcompra.getTipoMoeda())){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o tipo da moeda valido");
         }
-        if (ordemcompra.getNumero_agencia() == null || ordemcompra.getNumero_agencia().isBlank()){
+        if (ordemcompra.getNumeroAgenciaRetirada() == null || ordemcompra.getNumeroAgenciaRetirada().isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi informado o número da agencia");
         }
 

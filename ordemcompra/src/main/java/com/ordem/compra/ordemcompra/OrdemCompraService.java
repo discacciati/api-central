@@ -1,4 +1,4 @@
-package com.ordemcompra.apicentral;
+package com.ordem.compra.ordemcompra;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -18,7 +18,7 @@ public class OrdemCompraService {
     }
 
     public void criar(OrdemCompra entity){
-
+        // TODO: 07/02/2023 implementar logica ordemcompra 
     }
 
 

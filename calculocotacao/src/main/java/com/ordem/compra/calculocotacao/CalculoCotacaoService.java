@@ -12,8 +12,12 @@ public class CalculoCotacaoService {
     private final CalculoCotacaoRepository repository;
     private final CalculoCotacaoApiClient calculoCotacaoApiClient;
 
-    public Optional<CalculoCotacao> getByCode(String code) {
-        return repository.findById(code);
+    public Double getCotacao(String moeda) {
+        CalculoCotacaoApiClient cotacaoMoeda = new CalculoCotacaoApiClient();
+        CalculoCotacaoDTO valorMoeda = (CalculoCotacaoDTO) cotacaoMoeda.getCotacaoMoeda(moeda).get(0);
+
+        return valorMoeda.getBid();
+
     }
 
 }

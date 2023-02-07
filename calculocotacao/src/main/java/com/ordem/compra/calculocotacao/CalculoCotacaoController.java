@@ -17,37 +17,17 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping("api/calculocotacao")
 public class CalculoCotacaoController {
 
-    WebClient calculoCotacaoClient = WebClient.builder()
-            .baseUrl("https://economia.awesomeapi.com.br/")
-            .defaultHeader(HttpHeaders.CONTENT_TYPE,
-                    MediaType.APPLICATION_JSON_VALUE)
-            .build();
-
-
     private final CalculoCotacaoService service;
 
     @GetMapping("{moeda}")
-
-
-
-
-
-
-    public ResponseEntity<CalculoCotacaoDTO> getByCode(@PathVariable String moeda){
+    public Double getCotacao(@PathVariable String moeda){
         if(moeda == null || moeda.isBlank()){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Moeda não informada");
-        } else if (moeda == "USD"){
-            CalculoCotacao entity = service.getByCode(moeda)
-                    .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Moeda não foi localizada!"));
-            return ResponseEntity.ok(CalculoCotacaoDTO.of(entity));
-        } else if (moeda == "EUR") {
-            CalculoCotacao entity = service.getByCode(moeda)
-                    .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Moeda não foi localizada!"));
-            return ResponseEntity.ok(CalculoCotacaoDTO.of(entity));
-
+        } else if (moeda == "USD" || moeda == "EUR"){
+            Double valor = service.getCotacao(moeda);
+            return valor;
         } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Moeda incorreta");}
-
     }
 
 

@@ -12,11 +12,11 @@ public class OrdemCompraDTO {
     private Long idCliente;
     private String cpfCliente;
     private LocalDate dataSolicitacao;
-    private String tipoMoedaEstrangeira;
+    private String tipoMoeda;
     private Double valorMoedaEstrangeira;
     private Double valorCotacao;
     private Double valorTotalOperacao;
-    private String numeroAgenciaDeRetirada;
+    private String numeroAgenciaRetirada;
 
     public static OrdemCompraDTO of(OrdemCompra ordemCompra) {
         OrdemCompraDTO dto = new OrdemCompraDTO();
@@ -24,10 +24,10 @@ public class OrdemCompraDTO {
         dto.setIdCliente(ordemCompra.getIdCliente());
         dto.setCpfCliente(ordemCompra.getCpfCliente());
         dto.setDataSolicitacao(ordemCompra.getDataSolicitacao());
-        dto.setTipoMoedaEstrangeira(ordemCompra.getTipoMoedaEstrangeira());
+        dto.setTipoMoeda(ordemCompra.getTipoMoeda());
         dto.setValorCotacao(ordemCompra.getValorCotacao());
         dto.setValorTotalOperacao(ordemCompra.getValorTotalOperacao());
-        dto.setNumeroAgenciaDeRetirada(ordemCompra.getNumeroAgenciaDeRetirada());
+        dto.setNumeroAgenciaRetirada(ordemCompra.getNumeroAgenciaRetirada());
 
         return dto;
     }
@@ -38,10 +38,10 @@ public class OrdemCompraDTO {
         entity.setIdCliente(idCliente);
         entity.setCpfCliente(cpfCliente);
         entity.setDataSolicitacao(dataSolicitacao);
-        entity.setTipoMoedaEstrangeira(tipoMoedaEstrangeira);
+        entity.setTipoMoeda(tipoMoeda);
         entity.setValorCotacao(valorCotacao);
         entity.setValorTotalOperacao(valorTotalOperacao);
-        entity.setNumeroAgenciaDeRetirada(numeroAgenciaDeRetirada);
+        entity.setNumeroAgenciaRetirada(numeroAgenciaRetirada);
         return entity;
     }
 }

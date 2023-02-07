@@ -16,11 +16,11 @@ public class OrdemCompra {
     private Long idCliente;
     private String cpfCliente;
     private LocalDate dataSolicitacao;
-    private String tipoMoedaEstrangeira;
+    private String tipoMoeda;
     private Double valorMoedaEstrangeira;
     private Double valorCotacao;
     private Double valorTotalOperacao;
-    private String numeroAgenciaDeRetirada;
+    private String numeroAgenciaRetirada;
 
 
 }
